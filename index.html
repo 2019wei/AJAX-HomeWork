@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+            integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+            crossorigin="anonymous">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://hsiangfeng.github.io/AJAX-HomeWork/css/style.css">
+        <title>Javascript + Bootstrap 4高雄旅遊資訊網 </title>
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-md" data-aos="fade-down" data-aos-duration="500" style="background-color: rgba(0, 0, 0, 0.9);">
+            <a class="navbar-brand d-md-none" href="/">
+                <img src="https://hsiangfeng.github.io/AJAX-HomeWork/img/logo.png" width="200px" class="img-fluid">
+            </a>
+            <button class="navbar-toggler ml-auto text-white" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="d-md-flex d-block w-100">
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                    <div class="navbar-nav  align-items-center">
+                        <a class="nav-item nav-link active text-white" style="font-size: 20px" href="/">
+                            首頁<span class="sr-only">(current)</span>
+                        </a>
+                        <a class="navbar-brand mx-2 d-none d-md-inline px-4" href="/">
+                            <img src="https://hsiangfeng.github.io/AJAX-HomeWork/img/logo.png" width="100px" class="img-fluid" alt="高雄旅遊資訊網">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <header class="container text-white bg-jumbotron">
+            <div class="jumbotron text-center pd-jumbotron bg-transparent" data-aos="fade-down" data-aos-duration="500">
+                <h1 class="display-4 py-2">高雄旅遊資訊網</h1>
+                <div class="form-row d-flex justify-content-center">
+                    <div class="form-group col-md-4">
+                        <label for="selectArea" class="h3 pt-3 pb-3">請選擇要查詢的區域</label>
+                        <select name="selectArea" id="selectArea" class="form-control" style="background:rgba(255, 255, 255, .75); ">
+                            <option value="請選擇行政區">----請選擇行政區----</option>
+                            <option value="三民區">三民區</option>
+                            <option value="前鎮區">前鎮區</option>
+                            <option value="苓雅區">苓雅區</option>
+                            <option value="鼓山區">鼓山區</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center w-75 jumbotron-main" data-aos="fade-down" data-aos-duration="500">
+                <div class="row" style="background-color: rgba(0, 0, 0, 0.85);border-radius:5px;">
+                    <div class="col-md-3 col-6 py-3">
+                        <button class="btn btn-outline-primary btn-block" id="btnArea-1" value="苓雅區">苓雅區</button>
+                    </div>
+                    <div class="col-md-3 col-6 py-3">
+                        <button class="btn btn-outline-success btn-block" id="btnArea-2" value="三民區">三民區</button>
+                    </div>
+                    <div class="col-md-3 col-6 py-3">
+                        <button class="btn btn-outline-warning btn-block" id="btnArea-3" value="新興區">新興區</button>
+                    </div>
+                    <div class="col-md-3 col-6 py-3">
+                        <button class="btn btn-outline-info btn-block" id="btnArea-4" value="鼓山區">鼓山區</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container py-5">
+            <hr>
+        </div>
+        <section class="container todoList text-center">
+            <h3 id="listTitle" class="listTitle">推薦行程</h3>
+            <div id="list" class="row" data-aos="fade-down" data-aos-duration="500">
+            </div>
+            <nav aria-label="Page navigation example ">
+                <ul class="pagination d-flex justify-content-center" id="areaPage">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </section>
+        <footer class="container-fluid text-center footer-color ">
+            <p class="text-white pt-2">高雄旅遊網</p>
+            <p class="text-warning mb-0 pb-3">資料來源：高雄市政府 </p>
+        </footer>
+        <div id="gotop"></div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://hsiangfeng.github.io/AJAX-HomeWork/js/all.js"></script>
+        <script src="https://hsiangfeng.github.io/AJAX-HomeWork/js/jquery.gotop.js"></script>
+        <div id="gotop"></div>
+    </body>
+
+</html>

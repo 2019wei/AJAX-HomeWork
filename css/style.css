@@ -1,0 +1,65 @@
+@media (max-width: 767.98px) { 
+    .bg-jumbotron{
+        background-image: url("/JaveScript/AJAX/AJAX旅遊網/img/Hero.png");
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .jumbotron-main{
+        width: 100% !important;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+.bg-jumbotron{
+    background-image: url("/JaveScript/AJAX/AJAX旅遊網/img/Hero.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+.bg-cover{
+    background-position:  center;
+    background-size:cover;
+}
+.pd-jumbotron{
+    padding: 3rem 2rem;
+}
+.listTitle{
+    color:#8A82CC;
+    font-size:36px;
+    font-family: SFNSDisplay;
+}
+.card-img-title-lg{
+    font-family: SFNSDisplay;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+.card-img-title-sm{
+    font-family: PingFangTC-Regular;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+.card-p-text{
+    margin-bottom: 7px;
+}
+.fa-clock-time{
+    color:#8A82CC;
+}
+.fa-map-gps{
+    color:orange;
+}
+.fa-mobile{
+    color: #559AC8;
+}
+.footer-color{
+    background: #559AC8;
+}
+.bmi-font{
+    font-family: AppleSystemUIFont;
+    font-size: 18px;
+    color: #FFD366;
+}
+.btn-radius{
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+}
