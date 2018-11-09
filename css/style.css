@@ -1,6 +1,6 @@
 @media (max-width: 767.98px) { 
     .bg-jumbotron{
-        background-image: url("/JaveScript/AJAX/AJAX旅遊網/img/Hero.png");
+        background-image: url("https://hsiangfeng.github.io/AJAX-HomeWork/img/Hero.png");
         background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -12,7 +12,7 @@
     }
 }
 .bg-jumbotron{
-    background-image: url("/JaveScript/AJAX/AJAX旅遊網/img/Hero.png");
+    background-image: url("https://hsiangfeng.github.io/AJAX-HomeWork/img/Hero.png");
     background-position: top center;
     background-repeat: no-repeat;
 }
