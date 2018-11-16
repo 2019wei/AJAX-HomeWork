@@ -22,28 +22,21 @@ xhr.onload = function () {
 
 //Setting DOM
 var selectArea = document.getElementById('selectArea');
-var btnArea1 = document.getElementById('btnArea-1');
-var btnArea2 = document.getElementById('btnArea-2');
-var btnArea3 = document.getElementById('btnArea-3');
-var btnArea4 = document.getElementById('btnArea-4');
+var btnArea = document.getElementById('btnArea');
 var listTitle = document.querySelector('#listTitle');
 var list = document.querySelector('#list');
-var dataList = '';
 
 //參考target單元設置監聽事件
 //change為觸發下拉選單事件
 //click則是點擊事件
 selectArea.addEventListener('change', selectList, false);
-btnArea1.addEventListener('click', btnList, false);
-btnArea2.addEventListener('click', btnList, false);
-btnArea3.addEventListener('click', btnList, false);
-btnArea4.addEventListener('click', btnList, false);
+btnArea.addEventListener('click', btnList, false);
 
 //function
 function defalutData() {
   webData = arrayList('岡山區'); //預設初始行程
+  selectDown();
   list.innerHTML = webData;
-  //console.log(list.innerHTML);
 };
 
 function selectList(e) {
@@ -92,6 +85,25 @@ function arrayList(name) {
   };
   return arrayDataList;
 };
+function selectDown() {
+  var areaList = [];
+  var data = _data.result.records;
+  for (var i = 0; i < data.length; i++) {
+    areaList.push(data[i].Zone);
+  };
+
+  var Zone = [];
+  areaList.forEach(function (value) {
+    if (Zone.indexOf(value) == -1) {
+      Zone.push(value);
+    }
+  });
+  var str = '';
+  for (var i = 0; i < Zone.length; i++) {
+    str += `<option value="` + Zone[i] + `">` + Zone[i] + `</option>`; //因為是陣列所以要用迴圈方式取得
+  }
+  selectArea.innerHTML = str;
+}
 
 
 
